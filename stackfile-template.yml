@@ -1,0 +1,12 @@
+jenkins:
+  tags:
+    - jenkins
+  image: akinaru/docker-jenkins:latest
+  restart: always
+  environment:
+    JENKINS_OPTS: --httpPort=-1 --httpsPort=${HTTPS_INTERNAL_PORT} --httpsKeyStore=/var/lib/jenkins/keystore.jks --httpsKeyStorePassword=${KEYSTORE_PWD}
+  volumes:
+    - ${JENKINS_HOME_PATH}:/var/jenkins_home
+    - ${KEYSTORE_FILE_PATH}:/var/lib/jenkins/keystore.jks
+  ports:
+    - "${HTTPS_HOST_PORT}:${HTTPS_INTERNAL_PORT}"

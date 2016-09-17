@@ -1,0 +1,13 @@
+version: '2'
+services:
+  jenkins:
+    build: .
+    restart: always
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - ./keys/keystore.jks:/var/lib/jenkins/keystore.jks
+    environment:
+      JENKINS_OPTS: --httpPort=-1 --httpsPort=8083 --httpsKeyStore=/var/lib/jenkins/keystore.jks --httpsKeyStorePassword=keystore_pass
+    ports:
+      - 8083:8083
+      - 50000:50000
