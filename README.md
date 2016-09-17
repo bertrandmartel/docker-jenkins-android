@@ -58,3 +58,31 @@ keytool -importkeystore -deststorepass PASSWORD_STORE -destkeypass PASSWORD_KEYP
         -destkeystore keystore.jks -srckeystore pkcs.p12 -srcstoretype PKCS12 -srcstorepass STORE_PASS  \
         -alias ALIAS
 ```
+
+## Configure Giltab oauth
+
+* In your Gitlab domain go to `Admin` > `Application`
+
+Create a new application with a chosen name and a redirection URI like this : 
+
+* `https://your-jenkins-domain:8083/securityRealm/finishLogin`
+
+![](./img/gitlab_app.png)
+
+Then, you will have generated `Application ID` (client ID) and Secret (Client Secret) : 
+
+<hr/>
+
+![](./img/gitlab_token.png)
+
+<hr/>
+
+* Go to `Manage Jenkins` > `Configure Global Security`
+
+Fill up checking `Gitlab Authentication Plugin` in `Access control` :
+
+![](./img/oauth.png)
+
+<hr/>
+
+Now, Jenkins user will be authenticated via Gitlab
