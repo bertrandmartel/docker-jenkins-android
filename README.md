@@ -1,5 +1,9 @@
 # Jenkins Docker image
 
+[![Build Status](https://travis-ci.org/akinaru/docker-jenkins.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins)
+[![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins.svg)](https://microbadger.com/images/akinaru/docker-jenkins)
+[![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins.svg)](https://microbadger.com/images/akinaru/docker-jenkins)
+
 A jenkins docker image with the following pre-installed plugins :
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">gitlab-plugin</a> : build trigger on push
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Logo+Plugin">gitlab-logo</a> : gitlab repo icon on dashboard 

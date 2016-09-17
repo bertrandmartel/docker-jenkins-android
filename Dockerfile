@@ -1,5 +1,7 @@
 FROM jenkins:latest
 
+MAINTAINER Bertrand Martel <bmartel.fr@gmail.com>
+
 USER root
 
 # install lib32stdc++6 lib32z1 for aapt
