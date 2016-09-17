@@ -1,12 +1,12 @@
 # Jenkins Docker image
 
 A jenkins docker image with the following pre-installed plugins :
-* gitlab-plugin
-* android-emulator
-* gitlab-logo
-* gitlab-oauth
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">gitlab-plugin</a> : build trigger on push
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Logo+Plugin">gitlab-logo</a> : gitlab repo icon on dashboard 
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+OAuth+Plugin">gitlab-oauth</a> : gitlab authentication
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin">android-emulator</a> : use android emulator in CI
 
-Some packages are also pre-installed to build Android application correcly
+Other packages are also downloaded to build Android applications correctly
 
 ## Run
 
@@ -46,6 +46,7 @@ docker exec -it jenkins_image bash
 
 ## Convert server certs to JKS
 
+from <a href="https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm">this source</a> : 
 ```
 openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out pkcs.p12 -name ALIAS
 
