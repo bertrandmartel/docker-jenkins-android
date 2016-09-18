@@ -4,9 +4,11 @@ jenkins:
   image: akinaru/docker-jenkins:latest
   restart: always
   environment:
+    JAVA_OPTS: -Duser.timezone=${TIMEZONE}
     JENKINS_OPTS: --httpPort=-1 --httpsPort=${HTTPS_INTERNAL_PORT} --httpsKeyStore=/var/lib/jenkins/keystore.jks --httpsKeyStorePassword=${KEYSTORE_PWD}
   volumes:
     - ${JENKINS_HOME_PATH}:/var/jenkins_home
     - ${KEYSTORE_FILE_PATH}:/var/lib/jenkins/keystore.jks
+    - ${SSH_HOME}:/var/jenkins_home/.ssh
   ports:
     - "${HTTPS_HOST_PORT}:${HTTPS_INTERNAL_PORT}"
