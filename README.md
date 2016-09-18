@@ -9,6 +9,9 @@ A jenkins docker image with the following pre-installed plugins :
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Logo+Plugin">gitlab-logo</a> : gitlab repo icon on dashboard 
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+OAuth+Plugin">gitlab-oauth</a> : gitlab authentication
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin">android-emulator</a> : use android emulator in CI
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/Workspace+Cleanup+Plugin">ws-cleanup</a> : clean workspace before build
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin">slack</a> : send slack notifications
+* <a href="https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin">Embeddable Build Status Plugin</a> : build status badge
 
 Other packages are also downloaded to build Android applications correctly
 
