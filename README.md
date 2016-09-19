@@ -13,6 +13,8 @@ A jenkins docker image with the following pre-installed plugins :
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin">slack</a> : send slack notifications
 * <a href="https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin">Embeddable Build Status Plugin</a> : build status badge
 
+![](./img/architecture.png)
+
 Other packages are also downloaded to build Android applications correctly
 
 ## Run
@@ -131,6 +133,8 @@ Then, set the webhook URL as : `https://<jenkins-host>:<port>/project/<your job>
 
 ![](./img/webhook.png)
 
+<hr/>
+
 ## Configure Giltab Logo
 
 In `Manage Jenkins` > `Configure System` :
@@ -138,6 +142,22 @@ In `Manage Jenkins` > `Configure System` :
 ![](./img/gitlab-logo.png)
 
 `Endpoint URL` is : `https://<your-gitlab-host>:<port>/api/v3`
+
+<hr/>
+
+## Configure Slack notifications
+
+* go to https://my.slack.com/services/new/jenkins-ci
+
+![](./img/slack.png)
+
+<hr/>
+
+In your job configuration, add a Slack Notification `Post Build Action` :
+
+![](./img/slack.png)
+
+<hr/>
 
 ## External Links
 
