@@ -89,3 +89,57 @@ Fill up checking `Gitlab Authentication Plugin` in `Access control` :
 <hr/>
 
 Now, Jenkins user will be authenticated via Gitlab
+
+## Configure Giltab push trigger
+
+In `Manage Jenkins` > `Configure System` :
+
+![](./img/gitlab-connection.png)
+
+Gitlab URL is : `https://<your host>:<your port>`
+
+<hr/>
+
+Enter a Gitlab API Token that you got from Gitlab in `Profile Settings` > `Access Tokens` :
+
+![](./img/access-token.png)
+
+<hr/>
+
+In your job configuration, Set `GitLab connection` and `Git` repository config as :
+
+* Repository URL : `git@server/repo.git`
+* Name : `origin`
+* RefSpec : `+refs/heads/*:refs/remotes/origin/* +refs/merge-requests/*/head:refs/remotes/origin/merge-requests/*`
+* Branch specifier : `origin/${gitlabSourceBranch}`
+
+![](./img/git-config.png)
+
+<hr/>
+
+In `Build Trigger`, set `Build when a changed is pushed to Gitlab` :
+
+![](./img/build-trigger.png)
+
+<hr/>
+
+In your gitlab repository go to `Webhooks` :
+
+![](./img/webhook-settings.png)
+
+Then, set the webhook URL as : `https://<jenkins-host>:<port>/project/<your job>` :
+
+![](./img/webhook.png)
+
+## Configure Giltab Logo
+
+In `Manage Jenkins` > `Configure System` :
+
+![](./img/gitlab-logo.png)
+
+`Endpoint URL` is : `https://<your-gitlab-host>:<port>/api/v3`
+
+## External Links
+
+* gitlab-plugin setup example : https://github.com/jenkinsci/gitlab-plugin/wiki/Setup-Example
+* gitlab-oauth-plugin webhook fix : https://github.com/jenkinsci/gitlab-oauth-plugin/pull/6
