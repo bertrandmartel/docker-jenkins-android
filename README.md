@@ -155,7 +155,7 @@ In `Manage Jenkins` > `Configure System` :
 
 In your job configuration, add a Slack Notification `Post Build Action` :
 
-![](./img/slack.png)
+![](./img/slack-post-build.png)
 
 <hr/>
 
