@@ -1,8 +1,6 @@
 # Jenkins Docker image for Android dev
 
-[![Build Status](https://travis-ci.org/akinaru/docker-jenkins.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins)
-[![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins.svg)](https://microbadger.com/images/akinaru/docker-jenkins)
-[![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins.svg)](https://microbadger.com/images/akinaru/docker-jenkins)
+[![Build Status](https://travis-ci.org/akinaru/docker-jenkins-android.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android)
 
 A jenkins docker image with Android SDK/NDK global install and the following pre-installed plugins :
 * [gitlab-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin) : build trigger on push
@@ -73,17 +71,6 @@ docker-cloud start jenkins
 
 ```
 docker exec -it jenkins_image bash
-```
-
-## Convert server certs to JKS
-
-from <a href="https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm">this source</a> : 
-```
-openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out pkcs.p12 -name ALIAS
-
-keytool -importkeystore -deststorepass PASSWORD_STORE -destkeypass PASSWORD_KEYPASS \
-        -destkeystore keystore.jks -srckeystore pkcs.p12 -srcstoretype PKCS12 -srcstorepass STORE_PASS  \
-        -alias ALIAS
 ```
 
 ## Configure Giltab oauth
