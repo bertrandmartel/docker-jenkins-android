@@ -6,6 +6,7 @@ jenkins:
   environment:
     JAVA_OPTS: -Duser.timezone=${TIMEZONE}
     JENKINS_OPTS: --httpPort=-1 --httpsPort=${HTTPS_INTERNAL_PORT} --httpsKeyStore=/var/lib/jenkins/keystore.jks --httpsKeyStorePassword=${KEYSTORE_PWD}
+    ANDROID_BUILD_TOOLS_FILTER: ${ANDROID_BUILD_TOOLS_FILTER}
   volumes:
     - ${JENKINS_HOME_PATH}:/var/jenkins_home
     - ${KEYSTORE_FILE_PATH}:/var/lib/jenkins/keystore.jks

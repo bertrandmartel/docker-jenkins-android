@@ -7,3 +7,4 @@ export SSH_HOME=/home/jenkins/.ssh
 export TIMEZONE=CET
 export SDK_PATH=/home/bobby/android/sdk
 export NDK_PATH=/home/bobby/android/ndk
+export ANDROID_BUILD_TOOLS_FILTER=23.0.3
