@@ -108,10 +108,10 @@
       <data key="d5"/>
       <data key="d6">
         <y:ImageNode>
-          <y:Geometry height="127.0" width="152.0" x="1033.5" y="506.5"/>
+          <y:Geometry height="129.62144" width="154.29376000000002" x="1037.35872" y="503.87856000000005"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="74.0" y="131.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="75.14688000000001" y="133.62144"/>
           <y:Image alphaImage="true" refid="4"/>
         </y:ImageNode>
       </data>
@@ -120,10 +120,10 @@
       <data key="d5"/>
       <data key="d6">
         <y:ImageNode>
-          <y:Geometry height="127.0" width="147.0" x="886.5" y="506.5"/>
+          <y:Geometry height="137.0334522155007" width="169.2600000000001" x="875.3699999999999" y="504.6838663679999"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="71.5" y="131.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="82.63000000000011" y="141.0334522155007"/>
           <y:Image alphaImage="true" refid="5"/>
         </y:ImageNode>
       </data>
