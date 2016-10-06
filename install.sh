@@ -1,14 +1,28 @@
 #!/bin/bash -e
 
-: "${ANDROID_HOME:="$1"}"
-: "${ANDROID_SDK_ROOT:="$1"}"
-: "${ANDROID_NDK_HOME:="$2"}"
+export SDK_PATH=$1
+export NDK_PATH=$2
+export ANDROID_SDK=$3
+export VERSION_ANDROID_NDK=$4
+export ANDROID_NDK_HOME=${NDK_PATH}/${VERSION_ANDROID_NDK}
+export ANDROID_HOME=$SDK_PATH
+
+: "${ANDROID_HOME:="$ANDROID_HOME"}"
+: "${ANDROID_SDK_ROOT:="$ANDROID_HOME"}"
+: "${ANDROID_NDK_HOME:="$ANDROID_NDK_HOME"}"
 
 echo "ANDROID_HOME     : $ANDROID_HOME"
 echo "ANDROID_NDK_HOME : $ANDROID_NDK_HOME"
 echo "ANDROID_SDK_ROOT : $ANDROID_SDK_ROOT"
+echo "ERASE_ANDROID_SDK : $ERASE_ANDROID_SDK"
+echo "ERASE_ANDROID_NDK : $ERASE_ANDROID_NDK"
 
 export PATH=$PATH:$ANDROID_NDK_HOME:$ANDROID_HOME/tools
+
+if [ "$ERASE_ANDROID_NDK" == 1 ]; then
+	echo "removing ndk directory content..."
+	rm -rf ${NDK_PATH}/*
+fi
 
 # check if NDK is present
 if hash ndk-build 2>/dev/null; then
@@ -19,6 +33,11 @@ else
 	wget --no-verbose https://dl.google.com/android/repository/${VERSION_ANDROID_NDK}-linux-x86_64.zip -O ${NDK_PATH}/ndk.zip
 	unzip ${NDK_PATH}/ndk.zip -d ${NDK_PATH} && rm ${NDK_PATH}/ndk.zip
 	echo "Android NDK has been installed to ${NDK_PATH}"
+fi
+
+if [ "$ERASE_ANDROID_SDK" == 1 ]; then
+	echo "removing sdk directory content..."
+	rm -rf ${SDK_PATH}/*
 fi
 
 # check if SDK is present

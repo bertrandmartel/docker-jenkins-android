@@ -28,11 +28,12 @@ docker run -p 8080:8080 -p 50000:50000 \
 
 ## Environment variables
 
-
 | Variable name                    |  description       | sample value                                      |
 |----------------------------------|---------------------------------|------------------------------------------------------------------------|
-| VERSION_ANDROID_SDK        | sdk release name   | r25.2.2 |
-| VERSION_ANDROID_NDK            | ndk release name  | android-ndk-r12b |
+| ANDROID_SDK        | Android SDK release name   | r25.2.2 |
+| ANDROID_NDK            | Android NDK release name  | android-ndk-r12b |
+| ERASE_ANDROID_SDK      | clear SDK directory before installing a new one | 1 or 0 |
+| ERASE_ANDROID_NDK      | clear NDK directory before installing a new one | 1 or 0 |
 | ANDROID_BUILD_TOOLS_FILTER       | additionnal build tools versions to install comma separated  | 23.0.2,23.0.3   |
 
 Example :
@@ -40,8 +41,8 @@ Example :
 ```
 docker run -p 8080:8080 -p 50000:50000 \
            -e "ANDROID_BUILD_TOOLS_FILTER=23.0.2,23.0.3" \
-           -e "VERSION_ANDROID_SDK=r25.2.2" \
-           -e "VERSION_ANDROID_NDK=android-ndk-r12b" \
+           -e "ANDROID_SDK=r25.2.2" \
+           -e "ANDROID_NDK=android-ndk-r12b" \
            -v /home/user/Android/sdk:/opt/android/sdk \
            -v /home/user/Android/ndk:/opt/android/ndk \
            -v your_home/jenkins_home:/var/jenkins_home akinaru/docker-jenkins
