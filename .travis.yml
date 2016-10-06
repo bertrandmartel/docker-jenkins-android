@@ -10,7 +10,7 @@ install:
 # Assist with ci test debugging:
 #   - DEBUG=1
 before_script:
-    - image="akinaru/docker-jenkins"
+    - image="akinaru/docker-jenkins-android"
     - docker build -t "$image" .
     - docker inspect "$image"
 
