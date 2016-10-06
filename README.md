@@ -19,14 +19,35 @@ Other packages are also downloaded to build Android applications correctly
 
 ## Run
 
-* docker
-
 ```
 docker run -p 8080:8080 -p 50000:50000 \
+           -v /home/user/Android/sdk:/opt/android/sdk \
+           -v /home/user/Android/ndk:/opt/android/ndk \
            -v your_home/jenkins_home:/var/jenkins_home akinaru/docker-jenkins
 ```
 
-* docker-compose
+## Environment variables
+
+
+| Variable name                    |  description       | sample value                                      |
+|----------------------------------|---------------------------------|------------------------------------------------------------------------|
+| VERSION_ANDROID_SDK        | sdk release name   | r25.2.2 |
+| VERSION_ANDROID_NDK            | ndk release name  | android-ndk-r12b |
+| ANDROID_BUILD_TOOLS_FILTER       | additionnal build tools versions to install comma separated  | 23.0.2,23.0.3   |
+
+Example :
+
+```
+docker run -p 8080:8080 -p 50000:50000 \
+           -e "ANDROID_BUILD_TOOLS_FILTER=23.0.2,23.0.3" \
+           -e "VERSION_ANDROID_SDK=r25.2.2" \
+           -e "VERSION_ANDROID_NDK=android-ndk-r12b" \
+           -v /home/user/Android/sdk:/opt/android/sdk \
+           -v /home/user/Android/ndk:/opt/android/ndk \
+           -v your_home/jenkins_home:/var/jenkins_home akinaru/docker-jenkins
+```
+
+## docker-compose
 
 https configuration is enabled by default with `keystore.jks` in a `keys` directory :
 
@@ -34,7 +55,7 @@ https configuration is enabled by default with `keystore.jks` in a `keys` direct
 docker-compose up
 ```
 
-* docker-cloud
+## docker-cloud
 
 Edit `vars-template.sh` configuration, then :
 ```
