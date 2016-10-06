@@ -5,3 +5,5 @@ export KEYSTORE_PWD=keystore_pass
 export JENKINS_HOME_PATH=/home/bobby/jenkins_home
 export SSH_HOME=/home/jenkins/.ssh
 export TIMEZONE=CET
+export SDK_PATH=/home/bobby/android/sdk
+export NDK_PATH=/home/bobby/android/ndk

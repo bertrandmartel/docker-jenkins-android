@@ -1,7 +1,7 @@
 jenkins:
   tags:
     - jenkins
-  image: akinaru/docker-jenkins:latest
+  image: akinaru/docker-jenkins-android:latest
   restart: always
   environment:
     JAVA_OPTS: -Duser.timezone=${TIMEZONE}
@@ -10,5 +10,7 @@ jenkins:
     - ${JENKINS_HOME_PATH}:/var/jenkins_home
     - ${KEYSTORE_FILE_PATH}:/var/lib/jenkins/keystore.jks
     - ${SSH_HOME}:/var/jenkins_home/.ssh
+    - ${SDK_PATH}:/opt/android/sdk
+    - ${NDK_PATH}:/opt/android/ndk
   ports:
     - "${HTTPS_HOST_PORT}:${HTTPS_INTERNAL_PORT}"
