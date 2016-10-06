@@ -3,8 +3,8 @@
 export SDK_PATH=$1
 export NDK_PATH=$2
 export ANDROID_SDK=$3
-export VERSION_ANDROID_NDK=$4
-export ANDROID_NDK_HOME=${NDK_PATH}/${VERSION_ANDROID_NDK}
+export ANDROID_NDK=$4
+export ANDROID_NDK_HOME=${NDK_PATH}/${ANDROID_NDK}
 export ANDROID_HOME=$SDK_PATH
 
 : "${ANDROID_HOME:="$ANDROID_HOME"}"
@@ -30,7 +30,7 @@ if hash ndk-build 2>/dev/null; then
 else
 	mkdir -p ${NDK_PATH}
 	echo "downloading NDK..."
-	wget --no-verbose https://dl.google.com/android/repository/${VERSION_ANDROID_NDK}-linux-x86_64.zip -O ${NDK_PATH}/ndk.zip
+	wget --no-verbose https://dl.google.com/android/repository/${ANDROID_NDK}-linux-x86_64.zip -O ${NDK_PATH}/ndk.zip
 	unzip ${NDK_PATH}/ndk.zip -d ${NDK_PATH} && rm ${NDK_PATH}/ndk.zip
 	echo "Android NDK has been installed to ${NDK_PATH}"
 fi
@@ -46,7 +46,7 @@ if hash android 2>/dev/null; then
 else
 	mkdir -p ${SDK_PATH}
 	echo "downloading SDK..."
-	wget --no-verbose https://dl.google.com/android/repository/tools_${VERSION_ANDROID_SDK}-linux.zip -O ${SDK_PATH}/sdk.zip
+	wget --no-verbose https://dl.google.com/android/repository/tools_${ANDROID_SDK}-linux.zip -O ${SDK_PATH}/sdk.zip
 	unzip ${SDK_PATH}/sdk.zip -d ${SDK_PATH} && rm ${SDK_PATH}/sdk.zip
 	echo "Android SDK has been installed to ${NDK_PATH}"
 fi
