@@ -1,6 +1,6 @@
 # Jenkins Docker image for Android dev
 
-[![Build Status](https://travis-ci.org/akinaru/docker-jenkins-android.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android)
+[![Build Status](https://travis-ci.org/bertrandmartel/docker-jenkins-android.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android)
 
 A jenkins docker image with Android SDK/NDK global install and the following pre-installed plugins :
 * [gitlab-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin) : build trigger on push
@@ -33,6 +33,12 @@ docker run -p 8080:8080 -p 50000:50000 \
 | ERASE_ANDROID_SDK      | clear SDK directory before installing a new one | 1 or 0 |
 | ERASE_ANDROID_NDK      | clear NDK directory before installing a new one | 1 or 0 |
 | ANDROID_BUILD_TOOLS_FILTER       | additionnal build tools versions to install comma separated  | 23.0.2,23.0.3   |
+| SSL_CERT                         | path to certificate (*) |
+| SSL_KEY                          | path to key file (*) |
+| SSL_DEST                         | path for the newly created JKS from the certs above (*) |
+| SSL_NEW_PASS                     | newly created keystore password (*) |
+
+(*) required only if using certificates instead of JKS (working with letsencrypt certs)
 
 Example :
 
