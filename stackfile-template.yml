@@ -1,7 +1,7 @@
 jenkins:
   tags:
     - jenkins
-  image: akinaru/docker-jenkins-android:latest
+  image: bertrandmartel/docker-jenkins-android:latest
   restart: always
   environment:
     JAVA_OPTS: -Duser.timezone=${TIMEZONE}

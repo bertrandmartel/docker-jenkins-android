@@ -1,6 +1,6 @@
 # Jenkins Docker image for Android dev
 
-[![Build Status](https://travis-ci.org/bertrandmartel/docker-jenkins-android.svg?branch=master)](https://travis-ci.org/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/version/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android) [![](https://images.microbadger.com/badges/image/akinaru/docker-jenkins-android.svg)](https://microbadger.com/images/akinaru/docker-jenkins-android)
+[![Build Status](https://travis-ci.org/bertrandmartel/docker-jenkins-android.svg?branch=master)](https://travis-ci.org/bertrandmartel/docker-jenkins-android) [![](https://images.microbadger.com/badges/version/bertrandmartel/docker-jenkins-android.svg)](https://microbadger.com/images/bertrandmartel/docker-jenkins-android) [![](https://images.microbadger.com/badges/image/bertrandmartel/docker-jenkins-android.svg)](https://microbadger.com/images/bertrandmartel/docker-jenkins-android)
 
 A jenkins docker image with Android SDK/NDK global install and the following pre-installed plugins :
 * [gitlab-plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin) : build trigger on push
@@ -11,7 +11,7 @@ A jenkins docker image with Android SDK/NDK global install and the following pre
 * [slack](https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin) : send slack notifications
 * [Embeddable Build Status Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Embeddable+Build+Status+Plugin) : build status badge
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/architecture.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/architecture.png)
 
 Other packages are also downloaded to build Android applications correctly
 
@@ -21,7 +21,7 @@ Other packages are also downloaded to build Android applications correctly
 docker run -p 8080:8080 -p 50000:50000 \
            -v /home/user/Android/sdk:/opt/android/sdk \
            -v /home/user/Android/ndk:/opt/android/ndk \
-           -v your_home/jenkins_home:/var/jenkins_home akinaru/docker-jenkins-android
+           -v your_home/jenkins_home:/var/jenkins_home bertrandmartel/docker-jenkins-android
 ```
 
 ## Environment variables
@@ -49,7 +49,7 @@ docker run -p 8080:8080 -p 50000:50000 \
            -e "ANDROID_NDK=android-ndk-r12b" \
            -v /home/user/Android/sdk:/opt/android/sdk \
            -v /home/user/Android/ndk:/opt/android/ndk \
-           -v your_home/jenkins_home:/var/jenkins_home akinaru/docker-jenkins-android
+           -v your_home/jenkins_home:/var/jenkins_home bertrandmartel/docker-jenkins-android
 ```
 
 ## docker-compose
@@ -87,13 +87,13 @@ Create a new application with a chosen name and a redirection URI like this :
 
 * `https://your-jenkins-domain:8083/securityRealm/finishLogin`
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/gitlab_app.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/gitlab_app.png)
 
 Then, you will have generated `Application ID` (client ID) and Secret (Client Secret) : 
 
 ***
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/gitlab_token.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/gitlab_token.png)
 
 ***
 
@@ -101,7 +101,7 @@ Then, you will have generated `Application ID` (client ID) and Secret (Client Se
 
 Fill up checking `Gitlab Authentication Plugin` in `Access control` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/oauth.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/oauth.png)
 
 ***
 
@@ -111,7 +111,7 @@ Now, Jenkins user will be authenticated via Gitlab
 
 In `Manage Jenkins` > `Configure System` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/gitlab-connection.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/gitlab-connection.png)
 
 Gitlab URL is : `https://<your host>:<your port>`
 
@@ -119,7 +119,7 @@ Gitlab URL is : `https://<your host>:<your port>`
 
 Enter a Gitlab API Token that you got from Gitlab in `Profile Settings` > `Access Tokens` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/access-token.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/access-token.png)
 
 ***
 
@@ -130,23 +130,23 @@ In your job configuration, Set `GitLab connection` and `Git` repository config a
 * RefSpec : `+refs/heads/*:refs/remotes/origin/* +refs/merge-requests/*/head:refs/remotes/origin/merge-requests/*`
 * Branch specifier : `origin/${gitlabSourceBranch}`
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/git-config.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/git-config.png)
 
 ***
 
 In `Build Trigger`, set `Build when a changed is pushed to Gitlab` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/build-trigger.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/build-trigger.png)
 
 ***
 
 In your gitlab repository go to `Webhooks` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/webhook-settings.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/webhook-settings.png)
 
 Then, set the webhook URL as : `https://<jenkins-host>:<port>/project/<your job>` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/webhook.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/webhook.png)
 
 ***
 
@@ -154,7 +154,7 @@ Then, set the webhook URL as : `https://<jenkins-host>:<port>/project/<your job>
 
 In `Manage Jenkins` > `Configure System` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/gitlab-logo.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/gitlab-logo.png)
 
 `Endpoint URL` is : `https://<your-gitlab-host>:<port>/api/v3`
 
@@ -164,13 +164,13 @@ In `Manage Jenkins` > `Configure System` :
 
 * go to https://my.slack.com/services/new/jenkins-ci
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/slack.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/slack.png)
 
 ***
 
 In your job configuration, add a Slack Notification `Post Build Action` :
 
-![](https://github.com/akinaru/docker-jenkins-android/raw/master/img/slack-post-build.png)
+![](https://github.com/bertrandmartel/docker-jenkins-android/raw/master/img/slack-post-build.png)
 
 ***
 
