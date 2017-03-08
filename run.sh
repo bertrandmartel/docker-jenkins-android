@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p $SDK_PATH
+mkdir -p $NDK_PATH
+
 chown -R jenkins:jenkins /var/jenkins_home
 chown -R jenkins:jenkins $SDK_PATH
 chown -R jenkins:jenkins $NDK_PATH
