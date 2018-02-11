@@ -48,7 +48,7 @@ else
 	echo "downloading SDK..."
 	wget --no-verbose https://dl.google.com/android/repository/tools_${ANDROID_SDK}-linux.zip -O ${SDK_PATH}/sdk.zip
 	unzip ${SDK_PATH}/sdk.zip -d ${SDK_PATH} && rm ${SDK_PATH}/sdk.zip
-	echo "Android SDK has been installed to ${NDK_PATH}"
+	echo "Android SDK has been installed to ${SDK_PATH}"
 fi
 
 mkdir -p "$SDK_PATH/licenses" || true
