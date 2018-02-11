@@ -74,4 +74,4 @@ if [ ! -z "$ANDROID_BUILD_TOOLS_FILTER" ]; then
 	fi
 fi
 
-/bin/tini -- /usr/local/bin/jenkins.sh
+/sbin/tini -- /usr/local/bin/jenkins.sh
